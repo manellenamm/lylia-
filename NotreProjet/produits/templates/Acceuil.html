@@ -1,0 +1,331 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<section class="--section1">
+  <div class="group-39">
+    <svg
+      class="rectangle-1"
+      width="800"
+      height="800"
+      viewBox="0 470 913 540"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M0 0H875.08V905H0V0Z" fill="#D4BEB5" fill-opacity="0.82" />
+    </svg>
+
+      <div class="group-33">
+        <img class="rectangle-4" id="slideimg"src="{% static 'images/KENZA.jpg' %}" />
+      </div>
+      <div class="slideshow">
+        <img class="slide" src="{% static 'images/KENZA.jpg' %}" alt="Image 1">
+        <img class="slide" src="{% static 'images/tt.jpg' %}" alt="Image 2">
+        <img class="slide" src="{% static 'images/téléchargement.jpg' %}" alt="Image 3">
+      </div>
+      <script>
+        var slides = document.querySelectorAll('.slide');
+        var currentSlide = 0;
+        var slideInterval = setInterval(nextSlide, 2000);
+    
+        function nextSlide() {
+            slides[currentSlide].style.opacity = 0;
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].style.opacity = 1;
+        }
+    </script>
+    <div data-aos="zoom-out-down" class="a-c-c-e-s-s-o-i-r-e">
+      A<br/>C<br/>C<br/>E<br/>S<br/>S<br/>O<br/>I<br/>R<br/>E
+    </div>
+    <div data-aos="zoom-out-right" class="every-piece-of-jewelry-tells-a-story">
+      Every <br />
+      piece of <br />
+      jewelry <br />tells a <br />
+      story
+     <a href="#tranding"> <button class="button-52" role="button">Acheter</button> </a>
+    </div>
+ </section>
+
+ <section class="--section2">
+ <div class="parent">
+    <div class="div1" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500"
+    data-aos-once="false"> <img src="{% static 'images/pic.jpg' %}" class="image-animation"> </div>
+    <div class="div2"> <p>Nos Accesoires Sont Uniques</p></div>
+    <div class="div3" data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500"
+    data-aos-once="false"> <img src="{% static 'images/KENZA.jpg' %}" class="image-animation"> </div>
+    <div class="div4"data-aos="fade-down"
+    data-aos-easing="linear"
+    data-aos-duration="1500"
+    data-aos-once="false"> <img src="{% static 'images/mabeauté.jpg' %}" class="image-animation"> </div>
+    <div class="div5"> <p>Et d'une qualité superieure</p> </div>
+</div>
+</section>
+
+<section id="tranding" >
+  <div class="section3r">
+  <h1>...Catégories...</h1>
+</div>
+  <div class="containere">
+    <div class="swiper tranding-slider">
+      <div class="swiper-wrapper">
+        {% for mon_modele in mon_modele %}
+          <div class="swiper-slide tranding-slide">
+            <!-- Slide-start -->
+            <a href="{{ mon_modele.lien }}">
+              <div class="tranding-slide-img">
+                <img src="{{ mon_modele.chemin_image.url }}" alt="Tranding">  
+              </div>
+              <div class="tranding-slide-content">
+                <div class="tranding-slide-content-bottom">
+                  <p class="food-name">{{ mon_modele.legende }}</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!-- Slide-end -->
+        {% endfor %}
+      </div>
+      <div class="tranding-slider-control">
+        <div class="swiper-button-prev slider-arrow">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </div>
+        <div class="swiper-button-next slider-arrow">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!--section1-->
+  <section  data-aos="fade-down" class="section1" id="nous" >
+    <h1>...A Propos De Nous...</h1>
+      <div class="texte">
+        <p>Nous somme une</br>boutique de</br> vente des bijoux et de<br> différents</br> accesoires.la boutique </br>elle se</br> suite A Bejaia</p>
+      </div>
+       <div data-aos="zoom-out-left" class="images" data-aos-duration="1000"
+       data-aos-once="false">
+        <img class="rectangle-18" src="{% static 'images/rectangle-18.png' %}">
+        <img class="rectangle-20" src="{% static 'images/rectangle-20.png' %}">
+        <img class="rectangle-19" src="{% static 'images/rectangle-19.png' %}">
+       </div>
+      
+</section>
+<br>
+<br>
+<br>
+<style>
+  .section3r{
+    margin-bottom: 150px;
+  }
+  .section1 {
+    
+    margin-bottom: 150px;
+  }
+  
+  .section2 {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .section3{
+    margin-top: 150px;
+  }
+  </style>
+     <!--section2(profiter de nos offre)-->
+     <h1>...Profiter De Nos Offres...</h1>
+    
+ <section class="section2"> 
+
+  {% if messages %}
+  <div class="messages-container">
+      <div class="messages">
+          {% for message in messages %}
+              <div class="{{ message.tags }}">
+                  {{ message }}
+              </div>
+          {% endfor %}
+      </div>
+  </div>
+{% endif %}
+<style>
+.messages-container {
+  position: absolute;
+  top: 78%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f2dede;
+  color: #a94442;
+  padding: 15px;
+  margin: 0 auto;
+  border: 1px solid #ff002b;
+  border-radius: 4px;
+  text-align: center;
+  z-index: 1;
+}
+
+
+</style
+  <div id="alert-container"></div>
+{% for productOffre in products %}
+
+     <div class="product">
+       <picture>
+         <img src="{{productOffre.imageURL}}">
+       </picture>
+       <div class="detail">
+         <p>
+           <b>{{productOffre.name}}</b><br>
+          </p>
+          <p><del style="text-decoration: line-through; color: gray;">{{productOffre.ancienprice}}DA</del></p>
+       </div>
+
+       <div class="button">
+        <p>{{productOffre.price}}DA</p>
+
+         <div class="overlay">
+           <a  href="{% url 'add_to_wishlist' product_id=productOffre.pk %}" style="--1:1;" class="fa fa-heart add-to-wishlist"></a>
+           <a data-product="{{productOffre.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart fa fa-shopping-cart" style="--1:2;" ></a>
+       </div>
+      </div>
+     </div>
+    {% endfor %} 
+
+ </section>  
+<!--section3-->
+<section class="section3">
+  <div class="titre3">
+    <h1>...Avis De Clients...  </h1>
+  </div>
+  <div class="testimonial-container">
+    <div class="testimonial-wrapper">
+      <div class="testimonial-box mySwiper">
+  
+        <div class="testimonial-content swiper-wrapper">
+          {% for avis in avis %}
+            <div class="testimonial-slide swiper-slide">
+              <img src="{{avis.photo.url}}" alt="image">
+              <h4>{{avis.nom}}</h4>
+              <p>{{avis.commentaire}} </p>
+            </div>
+            {% endfor %}
+           
+        
+      </div>
+      <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+     
+    </div>
+  </div>
+    
+     <!--swiper js--> 
+     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+     <!--js-->
+     <script >
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 50,
+        loop: true,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+        navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+       },
+     });
+     </script> 
+    </section>  
+ 
+<script>
+  let span = document.getElementsByTagName('span');
+  let product = document.getElementsByClassName('product')
+  let product_page = Math.ceil(product.length/4);
+  let l = 0;
+  let movePer = 25.34;
+  let maxMove = 203;
+  // mobile_view  
+  let mob_view = window.matchMedia("(max-width: 768px)");
+  if (mob_view.matches)
+   {
+       movePer = 50.36;
+       maxMove = 504;
+   }
+  
+  let right_mover = ()=>{
+      l = l + movePer;
+      if (product == 1){l = 0; }
+      for(const i of product)
+      {
+          if (l > maxMove){l = l - movePer;}
+          i.style.left = '-' + l + '%';
+      }
+
+  }
+  let left_mover = ()=>{
+      l = l - movePer;
+      if (l<=0){l = 0;}
+      for(const i of product){
+          if (product_page>1){
+              i.style.left = '-' + l + '%';
+          }
+      }
+  }
+  span[1].onclick = ()=>{right_mover();}
+  span[0].onclick = ()=>{left_mover();}
+</script>  
+
+ {% load static %}
+ <script>
+  /*hhh*/
+var TrandingSlider = new Swiper('.tranding-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 100,
+      modifier: 2.5,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  });
+  
+
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init();
+    });
+  </script>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/Acceuil.css' %}">
+  <script src="{% static 'scripts/script.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>  
+  <script src="{% static 'scripts/cart.js' %}"></script> 
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+{% endblock content %}

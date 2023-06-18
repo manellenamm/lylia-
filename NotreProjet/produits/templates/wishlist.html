@@ -1,0 +1,159 @@
+{% extends 'main.html' %}
+{%load static%}
+{% block content %}
+<section class="sec">
+<h1>Votre wishlist</h1>
+<br>
+<table>
+	<thead>
+	  <tr>
+		<th></th>
+		<th class="tx">Nom du produit</th>
+		<th class="tx">Prix</th>
+		<th class="tx">Action</th>
+	  </tr>
+	</thead>
+	<tbody>
+	  {% for item in wishlist_items %}
+	  <tr>
+		<td><img src="{{ item.product.imageURL }}" alt="{{ item.product.name }}" style="max-width: 100px;"></td>
+		<td>{{ item.product.name }}</td>
+		<td>{{ item.product.price }}DA</td>
+		<td><a data-product="{{item.product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart fa fa-shopping-cart"></a>
+		<a  href="{% url 'remove_from_wishlist' item.id %}"><i class="fa fa-trash"></i></a></tr></td>
+	  </tr>
+	  <tr>
+		<td colspan="4"><hr></td>
+	  </tr>
+	  {% endfor %}
+	</tbody>
+  </table>
+</section>
+  <style>
+  .sec{
+	margin-bottom: 100px;
+  }
+  table {
+	border-collapse: collapse;
+	width: 100%;
+	top: 150px;
+	margin-bottom: 50px;
+left: 30px;
+
+	margin: 0 auto;
+  }
+  h1{
+	text-align: center;
+	margin-top: 40px;
+	color: #473127;
+	font-size: 30px;
+}
+  .tx{
+	font-size: 20px;
+  }
+  th, td {
+	text-align: left;
+	padding: 8px;
+  }
+  
+ 
+  
+  tr:nth-child(even) {
+	background-color: #ece7e0;
+  }
+  
+  tr:hover {
+	background-color: #ece7e0;;
+  }
+  /* Styles pour les écrans de petite taille (max 430px) */
+@media only screen and (max-width: 430px) {
+  /* Modifier la taille de la police */
+  h1 {
+    font-size: 24px;
+  }
+  
+  /* Centrer le contenu de la table */
+  table {
+    margin: 0 auto;
+  }
+  
+  /* Ajuster la largeur de l'image */
+  img {
+    max-width: 70px;
+  }
+  
+
+}
+  </style>
+  <script defer>
+	var updateBtns = document.getElementsByClassName('update-cart')
+	
+	for (i = 0; i < updateBtns.length; i++) {
+		updateBtns[i].addEventListener('click', function(){
+			var productId = this.dataset.product
+			var action = this.dataset.action
+			console.log('productId:', productId, 'Action:', action)
+			console.log('USER:', user)
+	
+			if (user == 'AnonymousUser'){
+				addCookieItem(productId, action)
+			}else{
+				updateUserOrder(productId, action)
+			}
+		})
+	}
+	
+	function updateUserOrder(productId, action){
+		console.log('User is authenticated, sending data...')
+	
+			var url = '/update_item/'
+	
+			fetch(url, {
+				method:'POST',
+				headers:{
+					'Content-Type':'application/json',
+					'X-CSRFToken':csrftoken,
+				}, 
+				body:JSON.stringify({'productId':productId, 'action':action})
+			})
+			.then((response) => {
+			return response.json();
+			})
+			.then((data) => {
+			location.reload()
+			});
+	}
+	
+	function addCookieItem(productId, action){
+		console.log('User is not authenticated')
+	
+		if (action == 'add'){
+			if (cart[productId] == undefined){
+			cart[productId] = {'quantity':1}
+	
+			}else{
+				cart[productId]['quantity'] += 1
+			}
+		}
+	
+		if (action == 'remove'){
+			cart[productId]['quantity'] -= 1
+	
+			if (cart[productId]['quantity'] <= 0){
+				console.log('Item should be deleted')
+				delete cart[productId];
+			}
+		}
+		console.log('CART:', cart)
+		document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		
+		location.reload()
+	}
+	
+</script>
+
+{% endblock %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/Acceuil.css' %}">
+<script src="{% static 'scripts/script.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>  
+<script src="{% static 'scripts/cart.js' %}"></script> 

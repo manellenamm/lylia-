@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Responsive Contact Form</title>
+
+  <script type="text/javascript" src="{% static 'scripts.js' %}"></script>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway:100,400,700" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+  <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <style>
+    .back-button {
+      display: inline-block;
+      margin-top: 10px;
+      margin-left: 10px;
+      padding: 10px;
+      background-color: #cb997e;
+      color: white;
+      text-decoration: none;
+      border-radius: 3px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .back-button:hover {
+      background-color: white;
+      color: #cb997e;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #a68267;
+      padding-bottom: 100px;
+    }
+
+    #contact {
+      width: 100%;
+      height: 100%;
+    }
+
+    .section-header {
+      text-align: center;
+      margin: 0 auto;
+      padding: 40px 0;
+      font: 300 60px 'Oswald', sans-serif;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 6px;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+      max-width: 840px;
+
+    }
+
+    /* Left contact page */
+    .form-horizontal {
+      /*float: left;*/
+      max-width: 400px;
+      font-family: 'Lato';
+      font-weight: 400;
+    }
+
+    .form-control,
+    textarea {
+      max-width: 400px;
+      background-color: white;
+      color: rgb(163, 116, 116);
+      letter-spacing: 1px;
+    }
+
+
+
+
+
+    .alt-send-button {
+      width: 400px;
+      height: 34px;
+      transition: all .2s ease-in-out;
+    }
+
+    .send-text {
+      display: block;
+      margin-top: 10px;
+      font: 700 12px 'Lato', sans-serif;
+      letter-spacing: 2px;
+
+    }
+
+    .send-button {
+      background-color: #8f6a6a;
+
+      border-color: #c8a8a8;
+      transition: background-color #c8a8a8;
+    }
+
+    .send-button:hover,
+    .send-button:focus {
+      background-color: #cb997e;
+      border-color: #c8a8a8;
+    }
+
+
+
+
+    .alt-send-button:hover {
+      transform: translate3d(0px, -29px, 0px);
+
+    }
+
+    /* Begin Right Contact Page */
+    .direct-contact-container {
+      max-width: 400px;
+    }
+
+    /* Location, Phone, Email Section */
+    .contact-list {
+      list-style-type: none;
+      margin-left: -30px;
+      padding-right: 20px;
+    }
+
+
+
+    .list-item {
+      line-height: 4;
+
+    }
+
+    .fa-phone {
+      color: white;
+    }
+
+    .fa-envelope {
+      color: white;
+    }
+
+    .fa-map-marker {
+      color: white;
+    }
+
+
+
+    .fa .contact-text {
+      font: 300 18px 'Lato', sans-serif;
+      letter-spacing: 1.9px;
+      color: white;
+    }
+
+    .place {
+      margin-left: 62px;
+    }
+
+    .phone {
+      margin-left: 56px;
+    }
+
+    .gmail {
+      margin-left: 53px;
+    }
+
+    .contact-text a {
+      color: #c8a8a8;
+      text-decoration: none;
+      transition-duration: 0.2s;
+    }
+
+    .contact-text a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+
+    /* Social Media Icons */
+    .social-media-list {
+      position: relative;
+      font-size: 22px;
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    .social-media-list li a {
+      color: #c8a8a8;
+    }
+
+
+
+    .social-media-list li {
+      position: relative;
+      display: inline-block;
+      height: 60px;
+      width: 60px;
+      margin: 10px 3px;
+      line-height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+    }
+
+    .social-media-list li:after {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      border-radius: 50%;
+      opacity: 0;
+      box-shadow: 0 0 0 1px #fff;
+      transition: all .2s ease-in-out;
+    }
+
+    .social-media-list li:hover {
+      background-color: #fff;
+    }
+
+    .social-media-list li:hover:after {
+      opacity: 1;
+      transform: scale(1.12);
+      transition-timing-function: cubic-bezier(0.37, 0.74, 0.15, 1.65);
+    }
+
+    .social-media-list li:hover a {
+      color: #cb997e;
+    }
+
+    input:focus {
+      border-color: white !important;
+      box-shadow: white;
+    }
+
+    .form-control:focus {
+      outline: 2px solid #c8a8a8;
+    }
+
+    textarea:focus {
+
+      border-color: white !important;
+    }
+
+    hr {
+      border-color: #c8a8a8;
+    }
+
+    /* Begin Media Queries*/
+    @media screen and (max-width: 850px) {
+      .contact-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .direct-contact-container,
+      .form-horizontal {
+        margin: 0 auto;
+      }
+
+      .direct-contact-container {
+        margin-top: 60px;
+        max-width: 300px;
+      }
+
+      .social-media-list li {
+        height: 60px;
+        width: 60px;
+        line-height: 60px;
+      }
+
+      .social-media-list li:after {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+      }
+
+      .form-control:focus {
+        border-color: #18181b;
+      }
+    }
+
+    @media screen and (max-width: 569px) {
+
+      .direct-contact-container,
+      .form-wrapper {
+        float: none;
+        margin: 0 auto;
+      }
+
+      .form-control,
+      textarea {
+
+        margin: 0 auto;
+      }
+
+
+      .name,
+      .email,
+      textarea {
+        width: 280px;
+      }
+
+      .direct-contact-container {
+        margin-top: 60px;
+        max-width: 280px;
+      }
+
+      .social-media-list {
+        left: 0;
+      }
+
+      .social-media-list li {
+        height: 55px;
+        width: 55px;
+        line-height: 55px;
+        font-size: 2rem;
+      }
+
+
+
+      .social-media-list li:after {
+        width: 55px;
+        height: 55px;
+        line-height: 55px;
+      }
+
+    }
+
+    @media screen and (max-width: 410px) {
+      .send-button {
+        width: 99%;
+      }
+    }
+  </style>
+  <script>$(document).ready(function () {
+      $(".back-button").click(function () {
+        window.history.back();
+      });
+    });</script>
+</head>
+
+<body>
+  <a href="{%url 'Acceuil'%}" class="back-button"><i class="fa fa-chevron-left"></i> Retour</a>
+  <!-- partial:index.partial.html -->
+  <section id="contact">
+
+    <h1 class="section-header">Contact</h1>
+
+    <div class="contact-wrapper">
+
+      <!-- Left contact page -->
+
+      <form action="/contact/" method="POST" id="contact-form" class="form-horizontal" role="form">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="text" class="form-control" id="name" placeholder="NAME" name="nom" value="" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="" required>
+          </div>
+        </div>
+
+        <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+
+        <button class="btn btn-primary send-button" type="submit" name="Send" style="background-color:#cb997e;">SEND
+        </button>
+
+
+      </form>
+
+
+
+      <!-- Left contact page -->
+
+      <div class="direct-contact-container">
+
+        <ul class="contact-list">
+          <li class="list-item"><a href="https://goo.gl/maps/DF7GzopLoTtmKrAQ9">
+              <i class="fa fa-map-marker fa-2x"><span class="contact-text place">Bejaia</span></i></a>
+          </li>
+
+          <li class="list-item"><a href="tel:1-212-555-5555" title="Give me a call"><i class="fa fa-phone fa-2x">
+                <span class="contact-text phone">0556577445</span></i></a></li>
+
+          <li class="list-item"><a
+              href="https://accounts.google.com/AccountChooser/signinchooser?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser"
+              title="Send me an email"><i class="fa fa-envelope fa-2x"><span
+                  class="contact-text gmail">fantasia@gmail.com</span></i></a></li>
+
+        </ul>
+
+        <hr>
+        <ul class="social-media-list">
+          <li>
+            <a href="https://www.facebook.com/fantasiajewelsandmore/" target="_blank" class="contact-icon">
+              <i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="#" target="_blank" class="contact-icon">
+              <i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </li>
+          <li><a href="https://www.instagram.com/fantasiajewelsandmore/?hl=fr" target="_blank" class="contact-icon">
+              <i class="fa fa-instagram" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+        <hr>
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+  <script src="./script.js"></script>
+
+</body>
+
+</html>

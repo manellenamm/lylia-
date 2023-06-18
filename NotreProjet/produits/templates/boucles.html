@@ -1,0 +1,256 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+  <h1>...Boucles...</h1>
+
+<section class="section2">
+
+	{% if messages %}
+	<div class="messages-container">
+		<div class="messages">
+			{% for message in messages %}
+			<div class="{{ message.tags }}">
+				{{ message }}
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</section>
+
+<div class="bijoux-list">
+	<div class="row">
+		{% for boucle in boucle %}
+		<div class="bijou">
+			<img src="{{boucle.image.url}}" alt="Bijou 1">
+			<h2 class="" product__title>{{boucle.name}}</h2>
+			<p class="price">Prix : {{boucle.price}}</p>
+			<div class="overlay">
+				<a href="{% url 'add_to_wishlist' product_id=boucle.pk %}" style="--1:1;" class="fa fa-heart add-to-wishlist"></a>
+				<a data-product ={{boucle.id}}  data-action="add"
+					class="btn btn-outline-secondary add-btn update-cart fa fa-shopping-cart" style="--1:2;"></a>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/stl.css' %}">
+	<style>
+		h1{
+			text-align: center; 
+			margin-left: auto; 
+			margin-right: auto; 
+		}
+        /* Style de la liste de bijoux */
+        .bijoux-list {
+          margin-top: 20px; /* Ajoutez une marge en haut pour espacer la liste des bijoux */
+		  margin-left: 50px;
+        }
+        
+        /* Style d'une ligne de bijoux */
+        .row {
+			display: flex;
+			justify-content: center; /* Centre les bijoux horizontalement */
+			flex-wrap: wrap; /* Permet le passage à la ligne des bijoux */
+			margin-left: -45px;/* Ajoute des marges négatives pour compenser les marges des bijoux */
+			}
+
+			.bijou {
+			width: calc(25% - 20px); /* 25% de largeur avec 20px de marges */
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			}
+        
+        /* Style de l'image d'un bijou */
+        .bijou img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+        
+        /* Style du titre d'un bijou */
+        .bijou h2 {
+          margin-top: 10px;
+          font-size: 18}
+         
+		.categorie {
+	display: flex;
+
+	flex-wrap: nowrap; /* Remplacer "wrap" par "nowrap" pour que les éléments ne se répartissent pas sur plusieurs lignes */
+	margin-top: 40px;
+	width: 100%; /* Ajouter cette ligne pour que la section occupe la largeur totale */
+	overflow-x: auto; /* Ajouter cette ligne pour ajouter une barre de défilement horizontale en cas de dépassement de la largeur */
+}
+
+.categorie picture {
+	flex: 0 0 auto; /* Modifier "flex" à "0 0 auto" pour que les éléments aient une largeur fixe */
+	width: 25%; /* Modifier la largeur à 25% pour afficher 4 images côte à côte */
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.categorie picture img {
+	width: 100%; /* Modifier la largeur à 100% pour que l'image occupe toute la largeur de son parent */
+	border-radius: 55px;
+	height: 60%;
+	object-fit: cover; /* Ajouter cette ligne pour que l'image conserve son ratio d'aspect et se redimensionne correctement */
+} 
+section {
+	width: 100%;
+	height: 50%;
+	margin-top: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+}
+section::-webkit-scrollbar {
+	display: none;
+}
+/* Règles de style pour les écrans ayant une largeur maximale de 576px, tels que les petits téléphones mobiles en mode portrait */
+@media (max-width: 576px) {
+   
+   .row {
+	margin-left: -122px;
+	 margin-right: -91px;
+   }
+   .categorie {
+	 overflow-x: scroll;
+	 margin-bottom: 0;
+   }
+   .categorie picture {
+	 width: 120px;
+	 height: 120px;
+	 margin-right: 10px;
+	 margin-bottom: 0;
+   }
+   .bijou {
+	 display: inline-block;
+	 width: 34%;
+	 box-sizing: border-box;
+	 border: 1px solid black;
+	 padding: 9px;
+	 margin-left: -5px;
+	 
+ }
+ h1{
+	 margin-top: 80px;
+ }
+ }
+	
+		.messages-container {
+			position: absolute;
+			top: 78%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #f2dede;
+			color: #a94442;
+			padding: 15px;
+			margin: 0 auto;
+			border: 1px solid #ff002b;
+			border-radius: 4px;
+			text-align: center;
+			z-index: 1;
+		}
+	</style>
+
+	<script defer>
+		var updateBtns = document.getElementsByClassName('update-cart')
+		
+		for (i = 0; i < updateBtns.length; i++) {
+			updateBtns[i].addEventListener('click', function(){
+				var productId = this.dataset.product
+				var action = this.dataset.action
+				console.log('productId:', productId, 'Action:', action)
+				console.log('USER:', user)
+		
+				if (user == 'AnonymousUser'){
+					addCookieItem(productId, action)
+				}else{
+					updateUserOrder(productId, action)
+				}
+			})
+		}
+		
+		function updateUserOrder(productId, action){
+			console.log('User is authenticated, sending data...')
+		
+				var url = '/update_item/'
+		
+				fetch(url, {
+					method:'POST',
+					headers:{
+						'Content-Type':'application/json',
+						'X-CSRFToken':csrftoken,
+					}, 
+					body:JSON.stringify({'productId':productId, 'action':action})
+				})
+				.then((response) => {
+				return response.json();
+				})
+				.then((data) => {
+				location.reload()
+				});
+		}
+		
+		function addCookieItem(productId, action){
+			console.log('User is not authenticated')
+		
+			if (action == 'add'){
+				if (cart[productId] == undefined){
+				cart[productId] = {'quantity':1}
+		
+				}else{
+					cart[productId]['quantity'] += 1
+				}
+			}
+		
+			if (action == 'remove'){
+				cart[productId]['quantity'] -= 1
+		
+				if (cart[productId]['quantity'] <= 0){
+					console.log('Item should be deleted')
+					delete cart[productId];
+				}
+			}
+			console.log('CART:', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+			
+			location.reload()
+		}
+		
+</script>
+
+
+
+
+	{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

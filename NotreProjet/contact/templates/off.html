@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+
+<head>
+  <title>Success</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<style>
+  /* Google Fonts - Poppins */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+  }
+
+  section {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #c8a8a8;
+  }
+
+  .modal-box {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 40%;
+    max-width: 380px;
+    width: 100%;
+    padding-right: 30px;
+    padding-left: 30px;
+    border-radius: 24px;
+    background-color: white;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-box i {
+    font-size: 70px;
+    color: #c8a8a8;
+    padding-left: 120px;
+  }
+
+  .modal-box h2 {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 500;
+    color: #333;
+    padding-left: 120px;
+  }
+
+  .modal-box h3 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+  }
+
+  .modal-box .buttons {
+    margin-top: 25px;
+    margin-left: 120px;
+    color: #c8a8a8;
+  }
+
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #ccb966;
+    border-color: #131414;
+  }
+
+  .modal-box button {
+    font-size: 14px;
+    padding: 7px 20px;
+    margin: 0 10px;
+    background-color: #c8a8a8;
+  }
+
+  .close-btn {
+    background: #5E5DF0;
+    border-radius: 999px;
+    box-shadow: #5E5DF0 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: fit-content;
+    word-break: break-word;
+    border: 0;
+    display: inline-block;
+  }
+</style>
+
+<body>
+  <section>
+    <div class="modal-box">
+      <i class="fa-regular fa-circle-check"></i>
+      <h2>Success</h2>
+      <h3>Votre message a été bien envoyer.</h3>
+
+      <div class="buttons">
+        <button class="close-btn"><a href="/contact/"> Ok </a> </button>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

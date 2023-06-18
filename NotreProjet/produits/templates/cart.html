@@ -1,0 +1,90 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<section>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="box-element" >
+
+				<a  id="continue"class="btn btn-outline-dark" href="{% url 'Acceuil' %}">&#x2190; Continuer le Shopping</a>
+
+				<br>
+				<br>
+				<table class="table"  style="border-collapse: separate; border-spacing:10px; width:100%;">
+					<tr>
+						<th><h5>Produits: <strong>{{order.cart_items}}</strong></h5></th>
+						<th ><h5>Totale:<strong> {{order.cart_total|floatformat:2}}DA</strong></h5></th>
+						<th >
+							<td>
+								<a  class=" checkout btn btn-success" href="{% url 'checkout' %}">Commander Maintenant</a>
+							  </td>
+							
+						</th>
+					</tr>
+				</table>
+
+			</div>
+
+			<br>
+			<div class="box-element">
+				<div class="cart-row">
+					<div style="flex:2"></div>
+					<div style="flex:2"><strong>Produit</strong></div>
+					<div style="flex:1"><strong>Prix</strong></div>
+					<div style="flex:1"><strong>Quantité</strong></div>
+					<div style="flex:1"><strong>Totale</strong></div>
+				</div>
+				{% if messages %}
+				<div class="messages-container">
+					<div class="messages">
+						{% for message in messages %}
+							<div class="{{ message.tags }}">
+								{{ message }}
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			  {% endif %}
+			  <style>
+			  .messages-container {
+				position: absolute;
+				top: 46%;
+				left: 75%;
+				transform: translate(-50%, -50%);
+				background-color: #f2dede;
+				color: #a94442;
+				padding: 15px;
+				margin: 0 auto;
+				border: 1px solid #ff002b;
+				border-radius: 4px;
+				text-align: center;
+				z-index: 1;
+			  }
+			  
+			  
+			  </style>
+				{% for item in items %}
+				<div class="cart-row">
+					<div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+					<div style="flex:2"><p>{{item.product.name}}</p></div>
+					<div style="flex:1"><p>{{item.product.price|floatformat:2}}DA</p></div>
+					<div style="flex:1">
+						<p class="quantity">{{item.quantity}}</p>
+						<div class="quantity">
+							<img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}">
+					
+							<img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}">
+						</div>
+					</div>
+					<div style="flex:1"><p>{{item.item_total|floatformat:2}}DA</p></div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+	</section>
+	{% load static %}
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{% static 'scripts/cart.js' %}"></script>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+{% endblock content %}

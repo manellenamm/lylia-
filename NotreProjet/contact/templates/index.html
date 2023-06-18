@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en">
+
+<head>
+  <title>Erreur</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ 
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<style>
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: #c8a8a8;
+}
+.modal-box {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 40%;
+  max-width: 380px;
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-radius: 24px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.modal-box i {
+  font-size: 70px;
+  color: #c8a8a8;
+  padding-left: 120px;
+}
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+  padding-left: 120px;
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.modal-box .buttons {
+  margin-top: 25px;
+  color: #c8a8a8;
+  text-align: center;
+}
+.modal-box button {
+  font-size: 14px;
+  padding: 7px 20px;
+  margin: 0 10px;
+  background-color: #c8a8a8;
+}
+.buttons .close-btn {
+	display: inline-block;
+  }
+  .close-btn {
+	background: #c8a8a8 p ;
+	border-radius: 999px;
+	box-shadow: #080808 0 10px 20px -10px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 24px;
+	opacity: 1;
+	outline: 0 solid transparent;
+	padding: 8px 18px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: fit-content;
+	word-break: break-word;
+	border: 0;
+  }
+
+</style>
+<body>
+  <section>
+    <div class="modal-box">
+      <i class="fa-regular fa-circle-xmark"></i>
+
+      <h2>Erreur</h2>
+      <h3>Vous n'etes pas inscris. inscrivez vous s'il vous plait</h3>
+
+      <div class="buttons">
+        <button class="close-btn"><a href="/register/">  Sinscrire </a></button>
+        <button class="close-btn" > <a href="/contact/">Ok </a></button>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>

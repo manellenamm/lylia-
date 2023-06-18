@@ -1,0 +1,10 @@
+{% autoescape off %}
+
+Bienvenue sur Fantasia
+
+Bonjour {{ user.username }},
+
+Confirmez votre compte en cliquant sur le lien suivant :
+http://{{domain}}{% url 'activate_user' uidb64=uid token=token %}
+
+{% endautoescape %}

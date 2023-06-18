@@ -1,0 +1,412 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.10) (preloaded format=pdflatex 2023.3.11)  4 APR 2023 17:01
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./chap1.tex
+(chap1.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-09-28>
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@chapter=\count186
+\c@section=\count187
+\c@subsection=\count188
+\c@subsubsection=\count189
+\c@paragraph=\count190
+\c@subparagraph=\count191
+\c@figure=\count192
+\c@table=\count193
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks16
+\inpenc@posthook=\toks17
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2022/10/04 3.81 The Babel package
+\babel@savecnt=\count194
+\U@D=\dimen139
+\l@unhyphenated=\language79
+
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count195
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+
+! Package babel Error: Unknown option 'french'. Either you misspelled it
+(babel)                or the language definition file french.ldf was not found
+.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4387 \ProcessOptions*
+                       
+Valid options are, among others: shorthands=, KeepShorthandsActive,
+activeacute, activegrave, noconfigs, safe=, main=, math=
+headfoot=, strings=, config=, hyphenmap=, or a language name.
+
+Package babel Info: You haven't specified a language. I'll use 'nil'
+(babel)             as the main language. Reported on input line 4432.
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/generic/babel\nil.ldf
+Language: nil 2022/10/04 3.81 Nil language
+\l@nil=\language80
+))
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks18
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+\stockwidth=\dimen140
+\stockheight=\dimen141
+))
+\Gin@req@height=\dimen142
+\Gin@req@width=\dimen143
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex
+.def
+File: l3backend-pdftex.def 2022-09-28 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count196
+\l__pdf_internal_box=\box51
+) (chap1.aux)
+\openout1 = `chap1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count197
+\scratchdimen=\dimen144
+\scratchbox=\box52
+\nofMPsegments=\count198
+\nofMParguments=\count199
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count266
+\MPscratchDim=\dimen145
+\MPnumerator=\count267
+\makeMPintoPDFobject=\count268
+\everyMPtoPDFconversion=\toks20
+)
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base
+.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\hp\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Overfull \hbox (3.79008pt too wide) in paragraph at lines 9--11
+\T1/cmr/m/n/12 notre équipe de développement web pour leur travail acharné, leu
+r dévouement
+ []
+
+
+Overfull \hbox (1.37119pt too wide) in paragraph at lines 16--19
+\T1/cmr/m/n/12 Nous sommes également reconnaissants envers notre équipe de déve
+loppement
+ []
+
+
+! LaTeX Error: Environment acknowledgement undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.27 \begin{acknowledgement}
+                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Overfull \hbox (3.79008pt too wide) in paragraph at lines 28--30
+\T1/cmr/m/n/12 notre équipe de développement web pour leur travail acharné, leu
+r dévouement
+ []
+
+[1
+
+{C:/Users/hp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+! LaTeX Error: \begin{document} ended by \end{acknowledgements}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.36 \end{acknowledgements}
+                           
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[2] (chap1.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 2.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 2.
+)
+\tf@toc=\write3
+\openout3 = `chap1.toc'.
+
+ [3
+
+] [4] [5]
+Chapitre 1.
+
+Underfull \hbox (badness 2469) in paragraph at lines 58--59
+[]\T1/cmr/m/n/12 Notre client est le propriétaire de la boutique
+ []
+
+
+Underfull \hbox (badness 1107) in paragraph at lines 58--59
+\T1/cmr/m/n/12 animés et attire une clientèle variée, des jeunes
+ []
+
+<fantasia.png, id=21, 106.14656pt x 39.89906pt>
+File: fantasia.png Graphic file (type png)
+<use fantasia.png>
+Package pdftex.def Info: fantasia.png  used on input line 62.
+(pdftex.def)             Requested size: 117.00119pt x 43.981pt.
+
+Overfull \hbox (2.61049pt too wide) in paragraph at lines 57--66
+$[]$ $[]$
+ []
+
+[6
+
+]
+Overfull \hbox (6.41704pt too wide) in paragraph at lines 75--78
+[]\T1/cmr/bx/n/12 Solution: \T1/cmr/m/n/12 Utilisez des mots-clés pertinents po
+ur le domaine de la bijouterie
+ []
+
+[7 <./fantasia.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 104--105
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 105--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+[9]
+Overfull \hbox (0.92526pt too wide) in paragraph at lines 120--122
+\T1/cmr/m/n/12 livraison, et avoir accès à un historique de leurs commandes pré
+cédentes.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--122
+
+ []
+
+
+Overfull \hbox (23.70181pt too wide) in paragraph at lines 122--123
+\T1/cmr/m/n/12 aux utilisateurs de créer un compte rapidement et de gérer leurs
+ informations
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 135--137
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+ []
+
+
+Overfull \hbox (17.63217pt too wide) in paragraph at lines 139--141
+[]\T1/cmr/m/n/12 gestion d'accessibilité : le système doit être accessible à to
+us les utilisateurs,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--141
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--145
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
+
+ []
+
+<diagramme-cas-d'util.png, id=42, 1104.125pt x 853.1875pt>
+File: diagramme-cas-d'util.png Graphic file (type png)
+<use diagramme-cas-d'util.png>
+Package pdftex.def Info: diagramme-cas-d'util.png  used on input line 150.
+(pdftex.def)             Requested size: 702.00119pt x 542.48407pt.
+
+Overfull \hbox (312.00119pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 20.81683pt on input line 153.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[11] [12 <./diagramme-cas-d'util.png>]
+Overfull \hbox (2.21062pt too wide) in paragraph at lines 158--161
+\T1/cmr/m/n/12 fonctionnement du site web. Dans le prochain chapitre, nous allo
+ns poursuivre
+ []
+
+[13
+
+]
+Chapitre 2.
+<gestion-panier.png, id=54, 759.83875pt x 1100.11pt>
+File: gestion-panier.png Graphic file (type png)
+<use gestion-panier.png>
+Package pdftex.def Info: gestion-panier.png  used on input line 167.
+(pdftex.def)             Requested size: 390.0pt x 564.65775pt.
+
+LaTeX Warning: Float too large for page by 42.99051pt on input line 170.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14
+
+] [15 <./gestion-panier.png>] [16
+
+]
+Chapitre 3.
+[17
+
+] (chap1.aux) ) 
+Here is how much of TeX's memory you used:
+ 2579 strings out of 475385
+ 42202 string characters out of 2778323
+ 404403 words of memory out of 3000000
+ 23961 multiletter control sequences out of 15000+600000
+ 478506 words of font info for 46 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 55i,6n,62p,664b,226s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
+pi600\ecbx1440.pk> <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/e
+c/dpi600\tcrm1200.pk> <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
+n/ec/dpi600\ecbx1200.pk> <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\ecbx2488.pk> <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfour/j
+knappen/ec/dpi600\ecrm1200.pk> <C:\Users\hp\AppData\Local\MiKTeX\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecbx1728.pk>
+Output written on chap1.pdf (17 pages, 249791 bytes).
+PDF statistics:
+ 271 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+

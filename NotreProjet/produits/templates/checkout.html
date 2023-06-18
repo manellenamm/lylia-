@@ -1,0 +1,170 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+	<div class="col-lg-6">
+		<div class="box-element" id="form-wrapper">
+
+			<form id="order-form" method="POST" action="{% url 'checkout' %}">
+				{% csrf_token %}
+				<div id="user-info">
+					<div class="form-field" style="width: 50%;">
+						<label for="id_name">Nom Complet:</label>
+						<input required class="form-control" type="text" name="name" id="id_name"
+							placeholder="Nom Complet..">
+					</div>
+					<div class="form-field" style="width: 60%;">
+						<label for="id_email">Email:</label>
+						<input required class="form-control" type="email" name="email" id="id_email"
+							placeholder="Email.." value="{{ request.user.email }}">
+					</div>
+				</div>
+
+				<div id="shipping-info">
+
+					<hr>
+					<p>Information de livraison:</p>
+					<hr>
+					<div class="form-field" style="width: 60%;">
+						<label for="id_address">Address:</label>
+						<input class="form-control" type="text" name="address" id="id_address" placeholder="Address..">
+					</div>
+
+					<div class="form-field">
+
+						<label for="id_city">Wilaya:</label>
+						<select class="form-control" name="wilaya" id="id_Wilaya">
+							<option value=""> wilaya</option>
+							<option value="Adrar">Adrar</option>
+							<option value="Chlef">Chlef</option>
+							<option value="Laghouat">Laghouat</option>
+							<option value="Oum El Bouaghi">Oum El Bouaghi</option>
+							<option value="Batna">Batna</option>
+							<option value="Béjaïa">Béjaïa</option>
+							<option value="Biskra">Biskra</option>
+							<option value="Béchar">Béchar</option>
+							<option value="Blida">Blida</option>
+							<option value="Bouira">Bouira</option>
+							<option value="Tamanrasset">Tamanrasset</option>
+							<option value="Tébessa">Tébessa</option>
+							<option value="Tlemcen">Tlemcen</option>
+							<option value="Tiaret">Tiaret</option>
+							<option value="Tizi Ouzou">Tizi Ouzou</option>
+							<option value="Alger">Alger</option>
+							<option value="Djelfa">Djelfa</option>
+							<option value="Jijel">Jijel</option>
+							<option value="Sétif">Sétif</option>
+							<option value="Saïda">Saïda</option>
+							<option value="Skikda">Skikda</option>
+							<option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+							<option value="Annaba">Annaba</option>
+							<option value="Guelma">Guelma</option>
+							<option value="Constantine">Constantine</option>
+							<option value="Médéa">Médéa</option>
+							<option value="Mostaganem">Mostaganem</option>
+							<option value="M'Sila">M'Sila</option>
+							<option value="Mascara">Mascara</option>
+							<option value="Ouargla">Ouargla</option>
+							<option value="Oran">Oran</option>
+							<option value="El Bayadh">El Bayadh</option>
+							<option value="Illizi">Illizi</option>
+							<option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+							<option value="Boumerdès">Boumerdès</option>
+							<option value="El Tarf">El Tarf</option>
+							<option value="Tindouf">Tindouf</option>
+							<option value="Tissemsilt">Tissemsilt</option>
+							<option value="El Oued">El Oued</option>
+							<option value="Khenchela">Khenchela</option>
+							<option value="Souk Ahras">Souk Ahras</option>
+							<option value="Tipaza">Tipaza</option>
+							<option value="Mila">Mila</option>
+							<option value="Aïn Defla">Aïn Defla</option>
+						</select>
+
+					</div>
+					<div class="form-field">
+						<label for="id_zipcode">Numero:</label>
+						<input class="form-control" type="text" name="numero" id="id_zipcode" placeholder="Tel.."
+							maxlength="10">
+					</div>
+				</div>
+				{% if form.errors %}
+    <ul>
+    {% for field_errors in form.errors.values %}
+        {% for error in field_errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+    </ul>
+{% endif %}
+				<hr>
+				<button id="form-button" class="btn btn-success btn-block" type="submit"
+					name="commander">Commander</button>
+
+
+
+			</form>
+		</div>
+
+	</div>
+
+	<div class="col-lg-6">
+		<div class="box-element">
+			<a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Retourner au panier</a>
+			{% if messages %}
+			<div class="messages-container">
+				<div class="messages">
+					{% for message in messages %}
+						<div class="{{ message.tags }}">
+							{{ message }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		  {% endif %}
+		  <style>
+		  .messages-container {
+			position: absolute;
+			top: 78%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #f2dede;
+			color: #a94442;
+			padding: 15px;
+			margin: 0 auto;
+			border: 1px solid #ff002b;
+			border-radius: 4px;
+			text-align: center;
+			z-index: 1;
+		  }
+		  </style>
+			<hr>
+			<h3>liste de commande</h3>
+			<hr>
+			{% for item in items %}
+			<div class="cart-row">
+				<div style="flex:2"><img class="row-image" src="{{item.product.imageURL}}"></div>
+				<div style="flex:2">
+					<p>{{item.product.name}}</p>
+				</div>
+				<div style="flex:1">
+					<p>{{item.product.price|floatformat:2}}DA</p>
+				</div>
+				<div style="flex:1">
+					<p>x{{item.quantity}}</p>
+				</div>
+			</div>
+			{% endfor %}
+			<h5>Produits: {{order.cart_items}}</h5>
+			<h5>Totale: {{order.cart_total|floatformat:2}}DA</h5>
+		</div>
+	</div>
+</div>
+
+{% load static %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+{% endblock content %}
